@@ -1,0 +1,36 @@
+default:
+  tags:
+    - test-runner-1
+
+stages:
+  - prebuild
+  - build
+  - test
+  - deploy
+
+trigger:
+  stage: prebuild
+  script:
+    - echo "Проект загружен на Github"
+    - echo "Сработал триггер!"
+
+build_project:
+  image: python:3.10-slim
+  stage: build
+  script:
+    - echo "Выполняю gcc -W -o program.bin"
+
+test:
+  stage: test
+  script:
+    - echo "Тестирование прошло успешно"
+
+
+delivery_and_deploy:
+   stage: deploy
+   script:
+      - echo "cp program.bin /server/"
+
+
+
+

@@ -1,6 +1,6 @@
-default:
-  tags:
-    - test-runner-1
+#default:
+ # tags:
+ #   - test-runner-1
 
 stages:
   - prebuild
